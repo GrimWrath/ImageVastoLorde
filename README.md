@@ -1,4 +1,7 @@
 # Image Vasto Lorde
+
+ImageVastoLorde is a fork and substantial enhancement of the original Image Bankai plugin by DeadRobotDev. The project retains the original BSD-2-Clause license and attribution.
+
 When enabled, will display a custom image on the client.
 
 Place a PNG or GIF named profile in %userprofile%\\.runelite\ on Windows or ~/.runelite/ on Linux/OSX.
