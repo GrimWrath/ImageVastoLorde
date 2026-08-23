@@ -1,16 +1,16 @@
-package com.imagebankai;
+package com.imagevastolorde;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("ImageBankai")
-public interface ImageBankaiConfig extends Config
+@ConfigGroup("ImageVastoLorde")
+public interface ImageVastoLordeConfig extends Config
 {
 	@ConfigItem(
-			keyName = "min",
+			keyName = "minWidth",
 			name = "Min Width",
-			description = "The min width of the image, in pixels",
+			description = "Minimum image width in pixels.",
 			position = 1
 	)
 	default int minWidth()
@@ -21,7 +21,7 @@ public interface ImageBankaiConfig extends Config
 	@ConfigItem(
 			keyName = "minHeight",
 			name = "Min Height",
-			description = "The min height of the image, in pixels",
+			description = "Minimum image height in pixels.",
 			position = 2
 	)
 	default int minHeight()
@@ -32,7 +32,7 @@ public interface ImageBankaiConfig extends Config
 	@ConfigItem(
 			keyName = "transparentBackground",
 			name = "Transparent Background",
-			description = "If enabled, will have a transparent background. By default, uses Overlay color set in RuneLite plugin.",
+			description = "Use a transparent background instead of the RuneLite overlay background color for PNGs." ,
 			position = 3
 	)
 	default boolean transparentBackground() { return false; }
@@ -40,7 +40,7 @@ public interface ImageBankaiConfig extends Config
 	@ConfigItem(
 			keyName = "overlayMode",
 			name = "Overlay Mode",
-			description = "Behind Interfaces displays behind interfaces, i.e bank and map. Always On Top displays above everything.",
+			description = "Controls which overlay layer the image is displayed on.",
 			position = 4
 	)
 	default OverlayMode overlayMode() { return OverlayMode.Default; }
