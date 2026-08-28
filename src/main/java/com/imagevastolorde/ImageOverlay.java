@@ -21,17 +21,35 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
 public class ImageOverlay extends OverlayPanel
 {
+	private static final File Path =
+			new File(RuneLite.RUNELITE_DIR, "ImageVastoLorde");
+
 	private static final File[] CUSTOM_IMAGE_FILES = {
-			new File(RuneLite.RUNELITE_DIR, "profile.gif"),
-			new File(RuneLite.RUNELITE_DIR, "profile.png"),
-			new File(RuneLite.RUNELITE_DIR, "profile.png.png")
+			new File(Path, "profile.gif"),
+			new File(Path, "profile.png"),
+			new File(Path, "profile.png.png")
 	};
+	static
+	{
+		try
+		{
+			Files.createDirectories(Path.toPath());
+		}
+		catch (IOException e)
+		{
+			throw new IllegalStateException(
+					"Could not create image directory: " + Path,
+					e
+			);
+		}
+	}
 
 	private final ImageVastoLordeConfig config;
 	private final BufferedImage errorImage;
